@@ -9,13 +9,13 @@ USER gitpod
 #
 # More information: https://www.gitpod.io/docs/config-docker/
 
-RUN sudo apt update
+RUN sudo apt-get update
 
 # The latest wheel for Ubuntu is for Python 3.7
 
-RUN sudo apt install -y software-properties-common
+RUN sudo apt-get install -y software-properties-common
 RUN sudo add-apt-repository ppa:deadsnakes/ppa
-RUN sudo apt install -y  python3.7 \
+RUN sudo apt-get install -y  python3.7 \
                     python3.7-dev \
                     python3-wxgtk4.0 \
                     libwxgtk3.0-gtk3-dev \
