@@ -1,8 +1,8 @@
 # IIB GF2
 
-A boilerplate directory providing an environment that can be used to develop using [wxPython](https://wxpython.org/) with [OpenGL](https://www.opengl.org/) using [Pipenv](https://github.com/pypa/pipenv) and some [Pipenv docs](https://pipenv-fork.readthedocs.io/en/latest/basics.html). (pycodestyle)[http://pycodestyle.pycqa.org/en/latest/intro.html] has been included to replace pep8
+A boilerplate directory providing an environment that can be used to develop using [wxPython](https://wxpython.org/) with [OpenGL](https://www.opengl.org/) using [Pipenv](https://github.com/pypa/pipenv) and some [Pipenv docs](https://pipenv-fork.readthedocs.io/en/latest/basics.html). [pycodestyle](http://pycodestyle.pycqa.org/en/latest/intro.html) has been included in replacement of pep8
 
-## Iniitialization. :
+## Iniitialization
 
 Following the [installation](#Installation) of the environment, we need to activate the environment after which time we write and run our code:
 
