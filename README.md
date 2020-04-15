@@ -1,8 +1,8 @@
-# IIB GF2
+# IIA GF2
 
 A boilerplate directory providing an environment that can be used to develop using [wxPython](https://wxpython.org/) with [OpenGL](https://www.opengl.org/) using [Pipenv](https://github.com/pypa/pipenv) and some [Pipenv docs](https://pipenv-fork.readthedocs.io/en/latest/basics.html). [pycodestyle](http://pycodestyle.pycqa.org/en/latest/intro.html) has been included in replacement of pep8
 
-## Iniitialization
+## Initialization
 
 Following the [installation](#Installation) of the environment, we need to activate the environment after which time we write and run our code:
 
@@ -83,13 +83,13 @@ wget -O /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl https://extras.wxp
 **In the root directory of this repository** build the image:
 
 ```
-docker build . iib_gf2
+docker build . iia_gf2
 ```
 
 To run the container, effectively log in to the image above, and provide access to your local display:
 
 ```
-docker run -it  --env="DISPLAY"  --net=host -v `pwd`:/project iib_gf2
+docker run -it  --env="DISPLAY"  --net=host -v `pwd`:/project iia_gf2
 ```
 
 Once in the container we need to activate the shell and install the package dependencies.  This is required each time we start the container.
