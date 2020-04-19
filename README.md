@@ -2,13 +2,13 @@
 
 # IIA GF2
 
-A boilerplate directory providing an environment that can be used to develop using [wxPython](https://wxpython.org/) with [OpenGL](https://www.opengl.org/) using [Pipenv](https://github.com/pypa/pipenv) and some [Pipenv docs](https://pipenv-fork.readthedocs.io/en/latest/basics.html). [pycodestyle](http://pycodestyle.pycqa.org/en/latest/intro.html) has been included in replacement of pep8
+A boilerplate directory providing an environment that can be used to develop using [wxPython](https://wxpython.org/) with [OpenGL](https://www.opengl.org/) using [Pipenv](https://github.com/pypa/pipenv) ( [Pipenv docs](https://pipenv-fork.readthedocs.io/en/latest/basics.html) ). [pycodestyle](http://pycodestyle.pycqa.org/en/latest/intro.html) has been included in replacement of pep8
 
 ## Initialization
 
-Following the [installation](#Installation) of the environment, we need to activate the environment after which time we write and run our code:
+Following the [installation](#Installation) of the environment, before we can start our development work, we need to activate the environment:
 
-This is required each time we run via [docker](#via-usage-of-dockerfile), but only the initial time if running from the local [Ubuntu](ubuntu-18.04) install
+This is required each time we run via [docker](#via-usage-of-dockerfile), but only the initial time if running from the local [Ubuntu](ubuntu-18.04) install. Via gitpod the environemt will be activated once it has loaded.
 
 In the root of this repository, or in the directory we enter on docker run command
 
@@ -17,14 +17,14 @@ pipenv shell
 pipenv install 
 # TO test a few things:
 # The next command should produce no output
-pycodestyle --first test_wx.py 
+pycodestyle --first tests/test_wx.py 
 python tests/test_wx.py
 ```
 
 To run the examples, provided the setup has been run:
 
 ```
-python examples/example_basic.py
+python examples/example_basics.py
 ```
 
 ## Installation
