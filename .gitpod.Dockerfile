@@ -40,4 +40,5 @@ WORKDIR /project
 RUN pipenv --python 3.7
 
 ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl
+RUN sudo chmod ugo+r ./wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl
 # ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./
