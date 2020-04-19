@@ -1,5 +1,5 @@
 tasks:
-  - init: pipenv shell && pipenv install
+  - init: pipenv install
     command: pipenv shell
 
 image:
