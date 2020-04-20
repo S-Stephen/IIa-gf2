@@ -8,7 +8,7 @@ A boilerplate directory providing an environment that can be used to develop usi
 
 Following the [installation](#Installation) of the environment, before we can start our development work, we need to activate the environment:
 
-This is required each time we run via [docker](#via-usage-of-dockerfile), but only the initial time if running from the local [Ubuntu](ubuntu-18.04) install. Via gitpod the environemt will be activated once it has loaded.
+Running the following commands are required each time we run via [docker](#via-usage-of-dockerfile), but only the initial time if running from the local [Ubuntu](ubuntu-18.04) install. If you have opened this repository Via gitpod these should automatically have run (so no need to re-run them!).
 
 In the root of this repository, or in the directory we enter on docker run command
 
@@ -21,13 +21,15 @@ pycodestyle --first tests/test_wx.py
 python tests/test_wx.py
 ```
 
-To run the examples, provided the setup has been run:
+The commands above run a small test to check that the libraries are available. 
+
+The examples, supplied in ./examples can also be run, provided the setup has been run:
 
 ```
 python examples/example_basics.py
 ```
 
-The application can be viewed by following the 'view in browser' link on the exposed port 6080. Or (in the **ports** tab) following the view in preview || browser link for port 6080.
+In **GitPod** the application can be viewed by following the 'Open Browser' link against port 6080 (via the **Open ports** tab in the lower terminal window).
 
 ## Installation
 
@@ -105,3 +107,8 @@ pipenv install
 ```
 
 We can now run our files from the command line of the container, and edit the files locally using the tols on our PC.
+
+
+### Via Gitpod
+
+You will need an account on Github, but you should just be able to follow the link at the top of this README
