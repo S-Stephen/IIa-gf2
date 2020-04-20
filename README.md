@@ -1,12 +1,14 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/S-Stephen/IIa-gf2) 
+
 # IIA GF2
 
-A boilerplate directory providing an environment that can be used to develop using [wxPython](https://wxpython.org/) with [OpenGL](https://www.opengl.org/) using [Pipenv](https://github.com/pypa/pipenv) and some [Pipenv docs](https://pipenv-fork.readthedocs.io/en/latest/basics.html). [pycodestyle](http://pycodestyle.pycqa.org/en/latest/intro.html) has been included in replacement of pep8
+A boilerplate directory providing an environment that can be used to develop using [wxPython](https://wxpython.org/) with [OpenGL](https://www.opengl.org/) using [Pipenv](https://github.com/pypa/pipenv) ( [Pipenv docs](https://pipenv-fork.readthedocs.io/en/latest/basics.html) ). [pycodestyle](http://pycodestyle.pycqa.org/en/latest/intro.html) has been included in replacement of pep8
 
 ## Initialization
 
-Following the [installation](#Installation) of the environment, we need to activate the environment after which time we write and run our code:
+Following the [installation](#Installation) of the environment, before we can start our development work, we need to activate the environment:
 
-This is required each time we run via [docker](#via-usage-of-dockerfile), but only the initial time if running from the local [Ubuntu](ubuntu-18.04) install
+Running the following commands are required each time we run via [docker](#via-usage-of-dockerfile), but only the initial time if running from the local [Ubuntu](ubuntu-18.04) install. If you have opened this repository Via gitpod these should automatically have run (so no need to re-run them!).
 
 In the root of this repository, or in the directory we enter on docker run command
 
@@ -15,15 +17,19 @@ pipenv shell
 pipenv install 
 # TO test a few things:
 # The next command should produce no output
-pycodestyle --first test_wx.py 
+pycodestyle --first tests/test_wx.py 
 python tests/test_wx.py
 ```
 
-To run the examples, provided the setup has been run:
+The commands above run a small test to check that the libraries are available. 
+
+The examples, supplied in ./examples can also be run, provided the setup has been run:
 
 ```
-python examples/example_basic.py
+python examples/example_basics.py
 ```
+
+In **GitPod** the application can be viewed by following the 'Open Browser' link against port 6080 (via the **Open ports** tab in the lower terminal window).
 
 ## Installation
 
@@ -70,10 +76,10 @@ sudo apt-get install freeglut3-dev
 
 ```
 
-Download the wheel used to install wxPython, download this into /tmp
+Download the wheel used to install wxPython, download this into the applications dependencies directory ./dependencies
 
 ```
-wget -O /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl 
+wget -O ./dependencies/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl 
 ```
 
 ### Via usage of Dockerfile
@@ -92,11 +98,17 @@ To run the container, effectively log in to the image above, and provide access 
 docker run -it  --env="DISPLAY"  --net=host -v `pwd`:/project iia_gf2
 ```
 
-Once in the container we need to activate the shell and install the package dependencies.  This is required each time we start the container.
+Once in the container we need to copy the wheell into ./dependencies/ and activate the shell and install the package dependencies.  This is required each time we start the container.
 
 ```
+cp /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./dependencies/
 pipenv shell
 pipenv install
 ```
 
 We can now run our files from the command line of the container, and edit the files locally using the tols on our PC.
+
+
+### Via Gitpod
+
+You will need an account on Github, but you should just be able to follow the link at the top of this README

@@ -1,0 +1,6 @@
+tasks:
+  - init: cp /project/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./dependencies/ && pipenv install
+    command: pipenv shell
+
+image:
+  file: .gitpod.Dockerfile
