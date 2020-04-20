@@ -27,6 +27,8 @@ To run the examples, provided the setup has been run:
 python examples/example_basics.py
 ```
 
+The application can be viewed by following the 'view in browser' link on the exposed port 6080. Or (in the **ports** tab) following the view in preview || browser link for port 6080.
+
 ## Installation
 
 ### Ubuntu 18.04
@@ -72,10 +74,10 @@ sudo apt-get install freeglut3-dev
 
 ```
 
-Download the wheel used to install wxPython, download this into /tmp
+Download the wheel used to install wxPython, download this into the applications dependencies directory ./dependencies
 
 ```
-wget -O /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl 
+wget -O ./dependencies/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl 
 ```
 
 ### Via usage of Dockerfile
@@ -94,9 +96,10 @@ To run the container, effectively log in to the image above, and provide access 
 docker run -it  --env="DISPLAY"  --net=host -v `pwd`:/project iia_gf2
 ```
 
-Once in the container we need to activate the shell and install the package dependencies.  This is required each time we start the container.
+Once in the container we need to copy the wheell into ./dependencies/ and activate the shell and install the package dependencies.  This is required each time we start the container.
 
 ```
+cp /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./dependencies/
 pipenv shell
 pipenv install
 ```
