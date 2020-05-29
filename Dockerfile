@@ -6,8 +6,8 @@ RUN apt update
 
 RUN yes | apt install software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt install -y  python3.7 \
-                    python3.7-dev \
+RUN apt install -y  python3.8 \
+                    python3.8-dev \
                     python3-wxgtk4.0 \
                     libwxgtk3.0-gtk3-dev \
                     libgtk-3-dev \
@@ -27,7 +27,7 @@ RUN locale-gen en_GB.UTF-8
 RUN mkdir /project
 WORKDIR /project
 
-RUN pipenv --python 3.7
+RUN pipenv --python 3.8
 
-ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl
+ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl /tmp/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
 # ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./
