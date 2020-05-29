@@ -11,12 +11,10 @@ USER gitpod
 
 RUN sudo apt-get update
 
-# 19-Apr-2020 The latest wheel for Ubuntu is for Python 3.7
-
 RUN sudo apt-get install -y software-properties-common
 RUN sudo add-apt-repository ppa:deadsnakes/ppa
-RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y  python3.7 \
-                     python3.7-dev \
+RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y  python3.8 \
+                     python3.8-dev \
                      python3-wxgtk4.0 \
                      libwxgtk3.0-gtk3-dev \
                      libgtk-3-dev \
@@ -25,6 +23,8 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y  python3.7 \
                      locales \
                      libcanberra-gtk-module \
                      libcanberra-gtk3-module
+
+RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install git curl libsdl2-mixer-2.0-0 libsdl2-image-2.0-0 libsdl2-2.0-0
 
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8 
@@ -37,8 +37,7 @@ RUN sudo mkdir /project
 RUN sudo chown gitpod /project
 WORKDIR /project
 
-RUN pipenv --python 3.7
+RUN pipenv --python 3.8
 
 ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl ./wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
 RUN sudo chmod ugo+r ./wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
-# ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./
