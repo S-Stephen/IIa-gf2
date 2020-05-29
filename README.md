@@ -52,14 +52,14 @@ echo 'export PATH=${HOME}/.local/bin:${PATH}' >> ${HOME}/.bashrc
 pip install --user --upgrade pipenv
 ```
 
-Now install Python 3.7 and the dependencies required for wxPython / opengl:
+Now install Python 3.8 and the dependencies required for wxPython / opengl:
 
 ```
 sudo apt update
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt install -y  python3.7 \
-                    python3.7-dev \
+sudo apt install -y  python3.8 \
+                    python3.8-dev \
                     python3-wxgtk4.0 \
                     libwxgtk3.0-gtk3-dev \
                     libgtk-3-dev \
@@ -79,7 +79,8 @@ sudo apt-get install freeglut3-dev
 Download the wheel used to install wxPython, download this into the applications dependencies directory ./dependencies
 
 ```
-wget -O ./dependencies/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl 
+wget -O ./dependencies/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
+https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
 ```
 
 ### Via usage of Dockerfile
@@ -101,7 +102,7 @@ docker run -it  --env="DISPLAY"  --net=host -v `pwd`:/project iia_gf2
 Once in the container we need to copy the wheell into ./dependencies/ and activate the shell and install the package dependencies.  This is required each time we start the container.
 
 ```
-cp /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./dependencies/
+cp /tmp/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl ./dependencies/
 pipenv shell
 pipenv install
 ```
