@@ -66,6 +66,10 @@ sudo apt install -y  python3.8 \
                     python3-pip \
                     libcanberra-gtk-module \
                     libcanberra-gtk3-module
+
+RUN sudo apt-get install -y libsdl2-mixer-2.0-0 
+RUN sudo apt-get install -y libsdl2-image-2.0-0 
+RUN sudo apt-get install -y libsdl2-2.0-0
 ```
 
 
