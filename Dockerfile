@@ -17,6 +17,10 @@ RUN apt install -y  python3.8 \
                     libcanberra-gtk-module \
                     libcanberra-gtk3-module
 
+RUN sudo apt-get install -y libsdl2-mixer-2.0-0 
+RUN sudo apt-get install -y libsdl2-image-2.0-0 
+RUN sudo apt-get install -y libsdl2-2.0-0
+
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8 
 
