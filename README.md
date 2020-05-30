@@ -103,7 +103,7 @@ sudo xhost +local:$(id -un)
 docker run -it  --env="DISPLAY"  --net=host -v `pwd`:/project iia_gf2
 ```
 
-Once in the container we need to copy the wheell into ./dependencies/ and activate the shell and install the package dependencies.  This is required each time we start the container.
+Once in the container we need to copy the wheel into ./dependencies/ and activate the shell and install the package dependencies.  This is required each time we start the container.
 
 ```
 cp /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./dependencies/
@@ -117,6 +117,28 @@ eg
 ```
 python examples/example_basic.py
 ```
+
+To run code contained in a different directory eg '/myhome/teamX/appname' mount this volume when starting the container:
+
+```
+docker run -it  --env="DISPLAY"  --net=host -v `pwd`:/project -v /myhome/teamX/appname:/teamx iia_gf2
+```
+
+Then run the setup as before:
+
+```
+cp /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./dependencies/
+pipenv shell
+pipenv install
+```
+
+You should now be able to run the code in directory **/teamx**:
+
+```
+python /teamx/somefile.py
+```
+
+
 
 ### Via Gitpod
 
