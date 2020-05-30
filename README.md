@@ -89,10 +89,15 @@ wget -O ./dependencies/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl https://
 **In the root directory of this repository** build the image:
 
 ```
-docker build . iia_gf2
+docker build . -t iia_gf2
 ```
 
 To run the container, effectively log in to the image above, and provide access to your local display:
+
+(provide access to your local display)
+```
+sudo xhost +local:$(id -un)
+```
 
 ```
 docker run -it  --env="DISPLAY"  --net=host -v `pwd`:/project iia_gf2
