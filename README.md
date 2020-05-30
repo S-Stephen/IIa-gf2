@@ -111,8 +111,12 @@ pipenv shell
 pipenv install
 ```
 
-We can now run our files from the command line of the container, and edit the files locally using the tols on our PC.
+We can now run our files from the command line of the container, and edit the files locally using the tools on our PC.
 
+eg
+```
+python examples/example_basic.py
+```
 
 ### Via Gitpod
 
