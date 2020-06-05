@@ -1,21 +1,21 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN apt update
 
-# The latest wheel for Ubuntu is for Python 3.7
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 
-RUN yes | apt install software-properties-common
+RUN  yes | apt install software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt install -y  python3.7 \
-                    python3.7-dev \
-                    python3-wxgtk4.0 \
-                    libwxgtk3.0-gtk3-dev \
-                    libgtk-3-dev \
-                    python3-pip \
-                    freeglut3-dev \
-                    locales \
-                    libcanberra-gtk-module \
-                    libcanberra-gtk3-module
+RUN  DEBIAN_FRONTEND="noninteractive" apt install -y  python3.7 \
+                     python3.7-dev \
+                     python3-wxgtk4.0 \
+                     libwxgtk3.0-gtk3-dev \
+                     libgtk-3-dev \
+                     python3-pip \
+                     freeglut3-dev \
+                     libcanberra-gtk-module \
+                     libcanberra-gtk3-module \
+                     locales 
 
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8 

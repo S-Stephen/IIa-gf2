@@ -33,7 +33,7 @@ In **GitPod** the application can be viewed by following the 'Open Browser' link
 
 ## Installation
 
-### Ubuntu 18.04
+### Ubuntu 20.04
 
 Install the library dependencies and Python into  a **pipenv**; used to run sandboxed python environments.
 
