@@ -1,21 +1,25 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 RUN apt update
 
-RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
+# The latest wheel for Ubuntu is for Python 3.7
 
-RUN  yes | apt install software-properties-common
+RUN yes | apt install software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN  DEBIAN_FRONTEND="noninteractive" apt install -y  python3.7 \
-                     python3.7-dev \
-                     python3-wxgtk4.0 \
-                     libwxgtk3.0-gtk3-dev \
-                     libgtk-3-dev \
-                     python3-pip \
-                     freeglut3-dev \
-                     libcanberra-gtk-module \
-                     libcanberra-gtk3-module \
-                     locales 
+RUN apt install -y  python3.7 \
+                    python3.7-dev \
+                    python3-wxgtk4.0 \
+                    libwxgtk3.0-gtk3-dev \
+                    libgtk-3-dev \
+                    python3-pip \
+                    freeglut3-dev \
+                    locales \
+                    libcanberra-gtk-module \
+                    libcanberra-gtk3-module
+
+RUN apt-get install -y libsdl2-mixer-2.0-0 
+RUN apt-get install -y libsdl2-image-2.0-0 
+RUN apt-get install -y libsdl2-2.0-0
 
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8 
@@ -29,5 +33,4 @@ WORKDIR /project
 
 RUN pipenv --python 3.7
 
-ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl /tmp/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl
-# ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./
+ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.1.0-cp37-cp37m-linux_x86_64.whl /tmp/wxPython-4.1.0-cp37-cp37m-linux_x86_64.whl
