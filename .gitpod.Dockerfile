@@ -26,6 +26,10 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y  python3.7 \
                      libcanberra-gtk-module \
                      libcanberra-gtk3-module
 
+RUN sudo apt-get install -y libsdl2-mixer-2.0-0 
+RUN sudo apt-get install -y libsdl2-image-2.0-0 
+RUN sudo apt-get install -y libsdl2-2.0-0
+
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8 
 
@@ -39,6 +43,5 @@ WORKDIR /project
 
 RUN pipenv --python 3.7
 
-ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl
-RUN sudo chmod ugo+r ./wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl
-# ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.0.7.post2-cp37-cp37m-linux_x86_64.whl ./
+ADD https://extras.wxpython.org/wxPython4/extras/linux/gtk2/ubuntu-18.04/wxPython-4.1.0-cp37-cp37m-linux_x86_64.whl ./wxPython-4.1.0-cp37-cp37m-linux_x86_64.whl
+RUN sudo chmod ugo+r ./wxPython-4.1.0-cp37-cp37m-linux_x86_64.whl
