@@ -1,0 +1,5 @@
+
+# ignore linting errors on wxPython 
+# https://discuss.wxpython.org/t/recommended-linter-for-wxpython/34419/2
+#
+generated-members = wx.*

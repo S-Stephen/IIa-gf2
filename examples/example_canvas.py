@@ -92,6 +92,8 @@ class MyGLCanvas(wxcanvas.GLCanvas):
         # Forces reconfiguration of the viewport, modelview and projection
         # matrices on the next paint event
         self.init = False
+        size = self.GetClientSize()
+        print("sized window: "+ str(size.width) + ", " + str(size.height) )
 
     def render_text(self, text, x_pos, y_pos):
         """Handle text drawing operations."""
@@ -123,7 +125,9 @@ class Gui(wx.Frame):
         self.scrollable.ShowScrollbars(wx.SHOW_SB_ALWAYS, wx.SHOW_SB_DEFAULT)
         self.scrollable.SetScrollbars(20, 20, 15, 10)
         # Configure the widgets
-        self.text = wx.StaticText(self, wx.ID_ANY, "Some text")
+        self.text = wx.StaticText(self, wx.ID_ANY, str(
+            self.GetClientSize().GetHeight()))
+        # self.text = wx.StaticText(self, wx.ID_ANY, "Some text")
         self.run_button = wx.Button(self, wx.ID_ANY, "Run")
 
         # Bind events to widgets
@@ -144,6 +148,12 @@ class Gui(wx.Frame):
         self.SetSizeHints(200, 200)
         self.SetSizer(main_sizer)
 
+        self.Bind(wx.EVT_SIZE, self.on_resize)
+
+        self.CreateStatusBar(3)
+        self.SetStatusText("Ready", 0);
+
+
     def on_menu(self, event):
         """Handle the event when the user selects a menu item."""
         Id = event.GetId()
@@ -154,6 +164,15 @@ class Gui(wx.Frame):
         """Handle the event when the user clicks the run button."""
         text = "Run button pressed."
         self.canvas.render(text)
+
+    def on_resize(self, event):
+        # self.resized = True
+        print("resized window: "+str(self.GetClientSize().GetHeight()))
+        print("re-sized")
+        self.canvas.render_text("resized",10,10)
+        size = self.GetClientSize()
+        self.SetStatusText( "size="+str(size.width) + "x" + str(size.height), 0);
+        event.Skip()
 
 
 app = wx.App()
