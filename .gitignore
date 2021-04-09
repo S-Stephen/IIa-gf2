@@ -2,3 +2,5 @@
 .local
 .dbus
 .config
+.ash_history
+.bash_history
