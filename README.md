@@ -9,6 +9,7 @@ A boilerplate directory providing an environment that can be used to develop usi
 
 To run the code in a container within VSC you need to:
 
+* Have [Docker](https://docs.docker.com/get-docker/) installed on your PC
 * Install the **Remote - Containers** VSC extension
 * Allow access to host display by first running 
 
