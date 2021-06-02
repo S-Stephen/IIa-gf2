@@ -52,7 +52,7 @@ Build a container from the **.devcontainer/Dockerfile** setting the user id to y
 
 ```
 cd .devcontainer
-docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t gf2_38 .
+docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t gf2_39 .
 ```
 
 ### Run
@@ -60,7 +60,7 @@ docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t gf2_38 .
 Run the container mounting the current directory something like:
 
 ```
-docker run -ti --net=host --privileged -v `pwd`/../:/home/auser --env="DISPLAY" gf2_38 /bin/bash
+docker run -ti --net=host --privileged -v `pwd`/../:/home/auser --env="DISPLAY" gf2_39 /bin/bash
 ```
 
 Inside the container run an example script:
